@@ -4,7 +4,9 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -12,6 +14,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -47,6 +50,10 @@ public class Client implements Serializable {
 	@Column(name = "profession")
 	@Enumerated(EnumType.STRING)
 	private Profession profession;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+	private List<Facture> factures;
+	
+	
 	public Client(Long idClient, String nom, String prenom, Date dateNaissance, String email, String password,
 			CategorieClient categorieClient, Profession profession) {
 		super();

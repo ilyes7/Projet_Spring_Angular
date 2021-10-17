@@ -1,12 +1,15 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +27,9 @@ public class Rayon implements Serializable{
 	private String code;
 	@Column(name = "libelle")
 	private String libelle;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="rayon")
+	private List<Produit> produits;
+	
 	public Rayon(Long idRayon, String code, String libelle) {
 		super();
 		this.idRayon = idRayon;

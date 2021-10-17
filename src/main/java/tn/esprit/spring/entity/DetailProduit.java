@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -35,6 +36,9 @@ public class DetailProduit implements Serializable {
 	@Column(name = "categorieProduit")
 	@Enumerated(EnumType.STRING)
 	private CategorieProduit categorieProduit;
+	@OneToOne(mappedBy="detailproduit")
+	private Produit produit ;
+	
 	public DetailProduit(Long idDetailProduit, Date dateCreation, String dateDerniereModification,
 			CategorieProduit categorieProduit) {
 		super();
