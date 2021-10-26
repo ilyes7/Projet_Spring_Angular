@@ -5,6 +5,7 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +32,7 @@ public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idclient")
+	@Column(name = "idClient")
 	private Long idClient;
 	@Column(name = "nom")
 	private String nom;
@@ -52,6 +53,10 @@ public class Client implements Serializable {
 	private Profession profession;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private List<Facture> factures;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+	private Set<Favoris> listFav;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+	private Set<Feedback> feedbacks;
 	
 	
 	public Client(Long idClient, String nom, String prenom, Date dateNaissance, String email, String password,
@@ -66,6 +71,16 @@ public class Client implements Serializable {
 		this.categorieClient = categorieClient;
 		this.profession = profession;
 	}
+	
+	
+	
+	public Client(Long idClient) {
+		super();
+		this.idClient = idClient;
+	}
+
+
+
 	public Long getIdClient() {
 		return idClient;
 	}
