@@ -17,10 +17,10 @@ import tn.esprit.spring.service.FeedbackServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class FeedbackServiceTest {
+class FeedbackServiceImplTests {
 
 
-	private static final Logger l = LogManager.getLogger(FeedbackServiceTest.class);
+	private static final Logger l = LogManager.getLogger(FeedbackServiceImplTests.class);
 
 	@Autowired
 	private FeedbackServiceImpl fs;
@@ -48,6 +48,12 @@ class FeedbackServiceTest {
 		l.info(f);
 	} 
 	
+	
+	@Test 
+	void deleteFeedbackTest() {
+	  fs.deleteFeedback((long) 6);
+	  l.info("Produit suprime!!");
+	}
 	
 	@Test
 	void addDislikeikeTest() {
@@ -86,11 +92,7 @@ class FeedbackServiceTest {
 		}
 
 	
-	@Test 
-	void deleteFeedbackTest() {
-	  fs.deleteFeedback((long) 6);
-	  l.info("Produit suprime!!");
-	}
+	
 
 	
 

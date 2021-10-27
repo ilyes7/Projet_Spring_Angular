@@ -222,3 +222,84 @@
 2021-10-27 01:52:02.987  INFO 6680 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-10-27 01:52:02.993  INFO 6680 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-10-27 01:52:03.008  INFO 6680 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-27 11:57:11.723  INFO 2960 --- [main] t.esprit.spring.ProduitServiceImplTests  : Starting ProduitServiceImplTests using Java 1.8.0_271 on DESKTOP with PID 2960 (started by Ilyes in C:\Users\Ilyes\Documents\workspace-spring-tool-suite-4-4.11.1.RELEASE\Gestion-Magasin-Stock)
+2021-10-27 11:57:11.730  INFO 2960 --- [main] t.esprit.spring.ProduitServiceImplTests  : No active profile set, falling back to default profiles: default
+2021-10-27 11:57:12.662  INFO 2960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-27 11:57:12.758  INFO 2960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2021-10-27 11:57:13.462  INFO 2960 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-27 11:57:13.534  INFO 2960 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-27 11:57:13.767  INFO 2960 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-27 11:57:14.105  INFO 2960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-27 11:57:14.302  INFO 2960 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-27 11:57:14.321  INFO 2960 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-27 11:57:16.673  INFO 2960 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-27 11:57:16.685  INFO 2960 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 11:57:18.616  WARN 2960 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-27 11:57:21.556  INFO 2960 --- [main] t.esprit.spring.ProduitServiceImplTests  : Started ProduitServiceImplTests in 10.293 seconds (JVM running for 11.859)
+2021-10-27 11:57:22.612  INFO 2960 --- [main] t.esprit.spring.ProduitServiceImplTests  : Produit [idProduit=6, code=code, libelle=libelle, prixUnitaire=70.0, categorieProduit=Alimentaire, dateCreation=null]
+2021-10-27 11:57:22.795  INFO 2960 --- [main] t.e.spring.service.ProduitServiceImpl    : produit: Produit [idProduit=1, code=code, libelle=libelle, prixUnitaire=50.0, categorieProduit=Alimentaire, dateCreation=2020-02-05]
+2021-10-27 11:57:22.795  INFO 2960 --- [main] t.e.spring.service.ProduitServiceImpl    : produit: Produit [idProduit=2, code=code, libelle=libelle, prixUnitaire=50.0, categorieProduit=Alimentaire, dateCreation=2020-02-05]
+2021-10-27 11:57:22.795  INFO 2960 --- [main] t.e.spring.service.ProduitServiceImpl    : produit: Produit [idProduit=3, code=code, libelle=libelle, prixUnitaire=70.0, categorieProduit=Alimentaire, dateCreation=null]
+2021-10-27 11:57:22.796  INFO 2960 --- [main] t.e.spring.service.ProduitServiceImpl    : produit: Produit [idProduit=5, code=code, libelle=libelle, prixUnitaire=70.0, categorieProduit=Alimentaire, dateCreation=null]
+2021-10-27 11:57:22.796  INFO 2960 --- [main] t.e.spring.service.ProduitServiceImpl    : produit: Produit [idProduit=6, code=code, libelle=libelle, prixUnitaire=70.0, categorieProduit=Alimentaire, dateCreation=null]
+2021-10-27 11:57:22.867  INFO 2960 --- [main] t.esprit.spring.ProduitServiceImplTests  : Produit: Produit [idProduit=1, code=code, libelle=libelle, prixUnitaire=70.0, categorieProduit=Quincaillerie, dateCreation=2020-02-05]
+2021-10-27 11:57:22.963  INFO 2960 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 11:57:22.991  INFO 2960 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-27 11:57:23.079  INFO 2960 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-27 12:03:10.782  INFO 10108 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_271 on DESKTOP with PID 10108 (C:\Users\Ilyes\Documents\workspace-spring-tool-suite-4-4.11.1.RELEASE\Gestion-Magasin-Stock\target\classes started by Ilyes in C:\Users\Ilyes\Documents\workspace-spring-tool-suite-4-4.11.1.RELEASE\Gestion-Magasin-Stock)
+2021-10-27 12:03:10.786  INFO 10108 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
+2021-10-27 12:03:11.632  INFO 10108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-27 12:03:11.720  INFO 10108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2021-10-27 12:03:13.074  INFO 10108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2021-10-27 12:03:13.101  INFO 10108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 12:03:13.102  INFO 10108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-27 12:03:13.468  INFO 10108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-27 12:03:13.468  INFO 10108 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2627 ms
+2021-10-27 12:03:13.834  INFO 10108 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-27 12:03:13.893  INFO 10108 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-27 12:03:14.531  INFO 10108 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-27 12:03:14.647  INFO 10108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-27 12:03:14.833  INFO 10108 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-27 12:03:14.850  INFO 10108 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-27 12:03:16.957  INFO 10108 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-27 12:03:16.966  INFO 10108 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 12:03:17.625  WARN 10108 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-27 12:03:18.371  INFO 10108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path ''
+2021-10-27 12:03:18.382  INFO 10108 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 8.295 seconds (JVM running for 8.853)
+2021-10-27 12:06:34.022  INFO 6368 --- [main] t.e.spring.FeedbackServiceImplTests      : Starting FeedbackServiceImplTests using Java 1.8.0_271 on DESKTOP with PID 6368 (started by Ilyes in C:\Users\Ilyes\Documents\workspace-spring-tool-suite-4-4.11.1.RELEASE\Gestion-Magasin-Stock)
+2021-10-27 12:06:34.026  INFO 6368 --- [main] t.e.spring.FeedbackServiceImplTests      : No active profile set, falling back to default profiles: default
+2021-10-27 12:06:34.776  INFO 6368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-27 12:06:34.852  INFO 6368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2021-10-27 12:06:35.460  INFO 6368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-27 12:06:35.529  INFO 6368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-27 12:06:35.761  INFO 6368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-27 12:06:36.065  INFO 6368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-27 12:06:36.241  INFO 6368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-27 12:06:36.258  INFO 6368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-27 12:06:38.118  INFO 6368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-27 12:06:38.131  INFO 6368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 12:06:39.036  WARN 6368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-27 12:06:39.973  INFO 6368 --- [main] t.e.spring.FeedbackServiceImplTests      : Started FeedbackServiceImplTests in 6.333 seconds (JVM running for 7.619)
+2021-10-27 12:06:40.150  INFO 6368 --- [main] t.e.spring.FeedbackServiceImplTests      : tn.esprit.spring.entity.Feedback@acd3460
+2021-10-27 12:06:40.172  INFO 6368 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 12:06:40.175  INFO 6368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-27 12:06:40.184  INFO 6368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-27 12:07:33.418  INFO 3552 --- [main] tn.esprit.spring.ClientServiceImplTests  : Starting ClientServiceImplTests using Java 1.8.0_271 on DESKTOP with PID 3552 (started by Ilyes in C:\Users\Ilyes\Documents\workspace-spring-tool-suite-4-4.11.1.RELEASE\Gestion-Magasin-Stock)
+2021-10-27 12:07:33.424  INFO 3552 --- [main] tn.esprit.spring.ClientServiceImplTests  : No active profile set, falling back to default profiles: default
+2021-10-27 12:07:34.161  INFO 3552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-27 12:07:34.240  INFO 3552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2021-10-27 12:07:34.860  INFO 3552 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-27 12:07:34.928  INFO 3552 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-27 12:07:35.157  INFO 3552 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-27 12:07:35.452  INFO 3552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-27 12:07:35.633  INFO 3552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-27 12:07:35.657  INFO 3552 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-27 12:07:37.748  INFO 3552 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-27 12:07:37.760  INFO 3552 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 12:07:38.665  WARN 3552 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-27 12:07:39.587  INFO 3552 --- [main] tn.esprit.spring.ClientServiceImplTests  : Started ClientServiceImplTests in 6.567 seconds (JVM running for 7.819)
+2021-10-27 12:07:39.931  WARN 3552 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1364, SQLState: HY000
+2021-10-27 12:07:39.932 ERROR 3552 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Field 'id_client' doesn't have a default value
+2021-10-27 12:07:40.157  INFO 3552 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 12:07:40.162  INFO 3552 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-27 12:07:40.202  INFO 3552 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
