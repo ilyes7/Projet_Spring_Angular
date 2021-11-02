@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,13 +29,13 @@ import tn.esprit.spring.enumerate.Profession;
 import tn.esprit.spring.repository.ClientRepository;
 
 @Service	
+@Slf4j
 @RequestMapping("/client")
 public class ClientServiceImpl implements ClientSerivce {
 	
 	@Autowired
 	ClientRepository clientRepository;
-	
-	private static final Logger l = LogManager.getLogger(ClientServiceImpl.class);
+
 
 	
 	@Override
@@ -41,7 +44,7 @@ public class ClientServiceImpl implements ClientSerivce {
 		List<Client> clients = (List<Client>) clientRepository.findAll();
 		for(Client client : clients) {
 		
-			l.info("client: "+ client);
+			log.info("client: "+ client);
 		}
 		return clients;
 	}
@@ -88,7 +91,7 @@ public class ClientServiceImpl implements ClientSerivce {
 		List<Client> clients = (List<Client>) clientRepository.retriveByDate();
 		for(Client client : clients) {
 		
-			l.info("client: "+ client);
+			log.info("client: "+ client);
 		}
 		return clients;
 	}

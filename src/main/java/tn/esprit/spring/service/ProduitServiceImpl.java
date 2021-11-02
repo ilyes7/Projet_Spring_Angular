@@ -18,11 +18,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.Produit;
 import tn.esprit.spring.repository.ProduitRepository;
 
 
 @Service	
+@Slf4j
 @RequestMapping("/produit")
 public class ProduitServiceImpl implements ProduitService{
 
@@ -30,7 +33,6 @@ public class ProduitServiceImpl implements ProduitService{
 	@Autowired
 	ProduitRepository produitRepository;
 	
-	private static final Logger l = LogManager.getLogger(ProduitServiceImpl.class);
 	
 	
 	@Override
@@ -39,7 +41,7 @@ public class ProduitServiceImpl implements ProduitService{
 		List<Produit> produits = (List<Produit>) produitRepository.findAll();
 		for(Produit produit : produits) {
 		
-			l.info("produit: "+ produit);
+			log.info("produit: "+ produit);
 		}
 		return produits;
 	}
