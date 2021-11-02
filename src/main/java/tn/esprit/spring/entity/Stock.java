@@ -29,6 +29,8 @@ public class Stock implements Serializable{
 	private int qteMin;
 	@Column(name = "libelleStock")
 	private String libelleStock;
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="stock")
 	private List<Produit> produits;
 	
