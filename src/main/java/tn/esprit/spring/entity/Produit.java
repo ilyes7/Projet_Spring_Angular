@@ -2,6 +2,7 @@ package tn.esprit.spring.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,6 +16,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import tn.esprit.spring.enumerate.CategorieClient;
+import tn.esprit.spring.enumerate.Profession;
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name = "Produit")
 public class Produit implements Serializable{
@@ -57,7 +70,7 @@ public class Produit implements Serializable{
 		this.libelle = libelle;
 		this.prixUnitaire = prixUnitaire;
 	}
-	public Produit() {
+	/*public Produit() {
 		super();
 	}
 	public Long getidProduit() {
@@ -83,7 +96,7 @@ public class Produit implements Serializable{
 	}
 	public void setPrixUnitaire(float prixUnitaire) {
 		this.prixUnitaire = prixUnitaire;
-	}
+	}*/
 	
 	
 }

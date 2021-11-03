@@ -18,6 +18,19 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import tn.esprit.spring.enumerate.CategorieClient;
+import tn.esprit.spring.enumerate.Profession;
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="Facture")
 public class Facture implements Serializable {
@@ -59,7 +72,7 @@ public class Facture implements Serializable {
 		this.dateFacture = dateFacture;
 		this.active = active;
 	}
-	public Facture() {
+	/*public Facture() {
 		super();
 	}
 	public Long getIdFacture() {
@@ -91,7 +104,7 @@ public class Facture implements Serializable {
 	}
 	public void setActive(boolean active) {
 		this.active = active;
-	}
+	}*/
 	
 	
 	

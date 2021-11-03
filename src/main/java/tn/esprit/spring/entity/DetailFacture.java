@@ -2,6 +2,7 @@ package tn.esprit.spring.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import tn.esprit.spring.enumerate.CategorieClient;
+import tn.esprit.spring.enumerate.Profession;
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="DetailFacture")
 public class DetailFacture implements Serializable {
@@ -54,7 +67,7 @@ public class DetailFacture implements Serializable {
 		this.pourcentageRemise = pourcentageRemise;
 		this.montantRemise = montantRemise;
 	}
-	public DetailFacture() {
+	/*public DetailFacture() {
 		super();
 	}
 	public Long getIdDetailFacture() {
@@ -86,7 +99,7 @@ public class DetailFacture implements Serializable {
 	}
 	public void setMontantRemise(float montantRemise) {
 		this.montantRemise = montantRemise;
-	}
+	}*/
 	
 
 }

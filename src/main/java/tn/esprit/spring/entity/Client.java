@@ -19,9 +19,18 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import tn.esprit.spring.enumerate.CategorieClient;
 import tn.esprit.spring.enumerate.Profession;
-
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="Client")
 public class Client implements Serializable {
@@ -66,7 +75,7 @@ public class Client implements Serializable {
 		this.categorieClient = categorieClient;
 		this.profession = profession;
 	}
-	public Long getIdClient() {
+	/*public Long getIdClient() {
 		return idClient;
 	}
 	public void setIdClient(Long idClient) {
@@ -113,7 +122,7 @@ public class Client implements Serializable {
 	}
 	public void setProfession(Profession profession) {
 		this.profession = profession;
-	}
+	}*/
 	public Client(String nom, String prenom, Date dateNaissance, String email, String password,
 			CategorieClient categorieClient, Profession profession) {
 		super();
@@ -125,9 +134,9 @@ public class Client implements Serializable {
 		this.categorieClient = categorieClient;
 		this.profession = profession;
 	}
-	public Client() {
+	/*public Client() {
 		super();
-	}
+	}*/
 	
 	
 

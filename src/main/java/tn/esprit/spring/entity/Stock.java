@@ -1,6 +1,7 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import tn.esprit.spring.enumerate.CategorieClient;
+import tn.esprit.spring.enumerate.Profession;
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="Stock")
 public class Stock implements Serializable{
@@ -47,7 +60,7 @@ public class Stock implements Serializable{
 		this.qteMin = qteMin;
 		this.libelleStock = libelleStock;
 	}
-	public Stock() {
+	/*public Stock() {
 		super();
 	}
 	public Long getIdStock() {
@@ -73,7 +86,7 @@ public class Stock implements Serializable{
 	}
 	public void setLibelleStock(String libelleStock) {
 		this.libelleStock = libelleStock;
-	}
+	}*/
 	
 
 }

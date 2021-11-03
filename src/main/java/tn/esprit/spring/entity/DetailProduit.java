@@ -2,6 +2,7 @@ package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +16,21 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import tn.esprit.spring.enumerate.CategorieClient;
 import tn.esprit.spring.enumerate.CategorieProduit;
+import tn.esprit.spring.enumerate.Profession;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="DetailProduit")
 public class DetailProduit implements Serializable {
@@ -53,7 +67,7 @@ public class DetailProduit implements Serializable {
 		this.dateDerniereModification = dateDerniereModification;
 		this.categorieProduit = categorieProduit;
 	}
-	public DetailProduit() {
+	/*public DetailProduit() {
 		super();
 	}
 	public Long getIdDetailProduit() {
@@ -79,7 +93,7 @@ public class DetailProduit implements Serializable {
 	}
 	public void setCategorieProduit(CategorieProduit categorieProduit) {
 		this.categorieProduit = categorieProduit;
-	}
+	}*/
 	
 	
 	

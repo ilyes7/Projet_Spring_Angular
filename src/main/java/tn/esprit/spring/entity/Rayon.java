@@ -1,6 +1,7 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,6 +13,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import tn.esprit.spring.enumerate.CategorieClient;
+import tn.esprit.spring.enumerate.Profession;
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Table(name="Rayon")
 public class Rayon implements Serializable{
@@ -41,7 +54,7 @@ public class Rayon implements Serializable{
 		this.code = code;
 		this.libelle = libelle;
 	}
-	public Rayon() {
+	/*public Rayon() {
 		super();
 	}
 	public Long getIdRayon() {
@@ -61,7 +74,7 @@ public class Rayon implements Serializable{
 	}
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
-	}
+	}*/
 	
 
 }
