@@ -4,46 +4,59 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.DetailFacture;
+import tn.esprit.spring.repository.DetailFactureRepository;
 
 
 @RestController
 @RequestMapping(value = "/detail-facture")
 @Service
 public class DetailFactureServiceImpl implements IDetailFactureService {
+	@Autowired
+	DetailFactureRepository DFactureRepository;
+	private static final Logger l = LogManager.getLogger(IFactureService.class);
+
+	@RequestMapping(value = "/display", method = RequestMethod.GET)
 
 	@Override
 	public List<DetailFacture> retrieveAllDetailFacture() {
-		// TODO Auto-generated method stub
-		return null;
+		List<DetailFacture> dfactures =(List<DetailFacture>)DFactureRepository.findAll();
+		for( DetailFacture dfacture : dfactures)
+		{
+			l.info("facture:"+ dfacture);
+		}
+		return dfactures ;
 	}
 
 	@Override
-	public DetailFacture addDetailFacture(DetailFacture c) throws ParseException {
-		// TODO Auto-generated method stub
-		return null;
+	public DetailFacture addDetailFacture(DetailFacture f) throws ParseException {
+		f=DFactureRepository.save(f);
+		return f;
 	}
 
 	@Override
 	public void deleteDetailFacture(Long id) {
-		// TODO Auto-generated method stub
+		DFactureRepository.deleteById(id);
 		
 	}
 
 	@Override
 	public DetailFacture updateDetailFacture(DetailFacture c) {
-		// TODO Auto-generated method stub
+		c=DFactureRepository.save(c);
 		return null;
 	}
-
+	
 	@Override
 	public Optional<DetailFacture> retrieveDetailFacture(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return DFactureRepository.findById(id);
 	}
 
 }
