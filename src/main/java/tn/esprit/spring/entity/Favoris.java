@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Favoris")
 public class Favoris implements Serializable{
@@ -24,7 +26,7 @@ public class Favoris implements Serializable{
 	 
 	 @ManyToMany(cascade = CascadeType.ALL)
 	 private Set<Produit> produits;
-	 
+	 @JsonIgnore
 	 @ManyToOne
 	 Client client;
 }

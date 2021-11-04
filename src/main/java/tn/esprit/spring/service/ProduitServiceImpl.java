@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.Produit;
@@ -26,7 +27,6 @@ import tn.esprit.spring.repository.ProduitRepository;
 
 @Service	
 @Slf4j
-@RequestMapping("/produit")
 public class ProduitServiceImpl implements ProduitService{
 
 	
@@ -36,7 +36,6 @@ public class ProduitServiceImpl implements ProduitService{
 	
 	
 	@Override
-	 @GetMapping("/display")
 	public List<Produit> retrieveAllProducts() {
 		List<Produit> produits = (List<Produit>) produitRepository.findAll();
 		for(Produit produit : produits) {
@@ -47,22 +46,18 @@ public class ProduitServiceImpl implements ProduitService{
 	}
 
 	@Override
-	@PostMapping("/addComment")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Produit addProduit(@Valid @RequestBody Produit p) {
+	public Produit addProduit(Produit p) {
 		
 		return produitRepository.save(p);
 	}
 
 	@Override
-	@DeleteMapping("/delete/{idProduit}")
-	public void deleteProduit(@PathVariable(value = "idProduit") Long idProduit) throws NoSuchElementException {
+	public void deleteProduit(Long idProduit) throws NoSuchElementException {
     	produitRepository.deleteById(idProduit);
 	}
 
 	@Override
-	@PutMapping("/update/{id}")
-	public Produit updateProduit(@PathVariable(value = "id") Long id, @Valid @RequestBody Produit p) {
+	public Produit updateProduit(Long id,Produit p) {
 		Produit p1 = retrieveProduit(id);
 		
 		p1.setCode(p.getCode()); 
@@ -74,8 +69,7 @@ public class ProduitServiceImpl implements ProduitService{
 	}
 
 	@Override
-	@GetMapping("/retrive/{id}")
-	public Produit retrieveProduit(@PathVariable(value = "id") Long id) throws NoSuchElementException{
+	public Produit retrieveProduit(Long id) throws NoSuchElementException{
 		Produit p = produitRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Produit not found for this id :: " + id));
 		return p ;
 	}

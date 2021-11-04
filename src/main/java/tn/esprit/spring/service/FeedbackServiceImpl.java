@@ -27,7 +27,6 @@ import tn.esprit.spring.repository.FeedbackRepository;
 
 @Service	
 @Slf4j
-@RequestMapping("/feedback")
 public class FeedbackServiceImpl implements FeedbackService{
 	
 	@Autowired
@@ -36,8 +35,8 @@ public class FeedbackServiceImpl implements FeedbackService{
 
 
 	@Override
-	@GetMapping("/display/{idProduit}")
-	public List<Feedback> retrieveAllFeedback(@PathVariable(value = "idProduit") long idProduit) {
+
+	public List<Feedback> retrieveAllFeedback(long idProduit) {
 		List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findAllByIdProduit(idProduit);
 		for(Feedback feedback : feedbacks) {
 		
@@ -47,21 +46,17 @@ public class FeedbackServiceImpl implements FeedbackService{
 	}
 
 	@Override
-	@PostMapping("/addComment")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Feedback addComment(@Valid @RequestBody Feedback f) {
+	public Feedback addComment(Feedback f) {
 		return feedbackRepository.save(f);
 	}
 
 	@Override
-	@DeleteMapping("/delete/{idFeedback}")
-	public void deleteFeedback(@PathVariable(value = "idFeedback") long idFeedback) throws NoSuchElementException{
+	public void deleteFeedback(long idFeedback) throws NoSuchElementException{
 		feedbackRepository.deleteById(idFeedback);		
 	}
 
 	@Override
-	@PutMapping("/updateComment/{idFeedback}")
-	public Feedback updateComment(@PathVariable(value = "idFeedback") long idFeedback, @Valid @RequestBody Feedback f) {
+	public Feedback updateComment(long idFeedback,Feedback f) {
 		Feedback f1 = retrieveFeedback(idFeedback);
 	    f1.setCommentaire(f.getCommentaire());
 		return feedbackRepository.save(f1);
@@ -69,27 +64,21 @@ public class FeedbackServiceImpl implements FeedbackService{
 
 
 	@Override
-	@ResponseBody
-	@GetMapping("/nbrLike/{idProduit}")
-	public long nbrLikes(@PathVariable(value = "idProduit") long idProduit) {
+	public long nbrLikes(long idProduit) {
 		long likes = (long) feedbackRepository.nbrLikes(idProduit);
 		log.info("Likes: "+ likes);
 		return (long) likes;
 	}
 
 	@Override
-	@ResponseBody
-	@GetMapping("/nbrDislike/{idProduit}")
-	public long nbrDislikes(@PathVariable(value = "idProduit") long idProduit) {
+	public long nbrDislikes(long idProduit) {
 		long dislikes = (long) feedbackRepository.nbrDislikes(idProduit);
 		log.info("dislikes: "+ dislikes);
 		return (long) dislikes;
 	}
 	
 	@Override
-	@PostMapping("/updateReaction/{idFeedback}")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Feedback updateReaction(@PathVariable(value = "idFeedback") Long idFeedback, @Valid @RequestBody Feedback f) {
+	public Feedback updateReaction(Long idFeedback,Feedback f) {
 		//System.out.println(feedbackRepository.checkReaction((long) 2,(long) 3));
 		
 			Feedback f1 = retrieveFeedback(idFeedback);
@@ -100,18 +89,15 @@ public class FeedbackServiceImpl implements FeedbackService{
 		}
 
 	@Override
-	@GetMapping("/retrive/{idFeedback}")
-	public Feedback retrieveFeedback(@PathVariable(value = "idFeedback") long idFeedback) throws NoSuchElementException{
+
+	public Feedback retrieveFeedback(long idFeedback) throws NoSuchElementException{
 		Feedback f = feedbackRepository.findById(idFeedback).orElseThrow(() -> new NoSuchElementException(" not found for this id :: " + idFeedback)) ;
 		log.info("Feedback: "+ f);
 		return f ;		
 	}
 	
 	@Override
-	@ResponseBody
-	@PostMapping("/addReaction")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Feedback addReaction(@Valid @RequestBody Feedback f) {
+	public Feedback addReaction(Feedback f) {
 		
 			return feedbackRepository.save(f);
 

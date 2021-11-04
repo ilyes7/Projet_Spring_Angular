@@ -22,6 +22,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -58,14 +60,20 @@ public class Produit implements Serializable{
 	private Date dateCreation;
 	
 	
+	
+	@JsonIgnore
 	@ManyToOne
 	@ToString.Exclude Stock stock ;
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@ToString.Exclude private List<Fournisseur> fournissuers;
+	@JsonIgnore
 	@ManyToOne
 	@ToString.Exclude Rayon rayon ;
+	@JsonIgnore
 	@ManyToOne
 	@ToString.Exclude DetailFacture detailFacture ;
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
 	@ToString.Exclude private Set<Feedback> listFeedback;
 	

@@ -20,6 +20,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import tn.esprit.spring.enumerate.CategorieClient;
 import tn.esprit.spring.enumerate.Profession;
 
@@ -51,10 +53,13 @@ public class Client implements Serializable {
 	@Column(name = "profession")
 	@Enumerated(EnumType.STRING)
 	private Profession profession;
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private List<Facture> factures;
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Favoris> listFav;
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Feedback> feedbacks;
 	
