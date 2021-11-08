@@ -17,3 +17,4 @@
 2021-11-08 13:21:50.677  INFO 18828 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 2021-11-08 13:21:50.957  WARN 18828 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2021-11-08 13:21:51.204  INFO 18828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
+2021-11-08 13:21:51.212  INFO 18828 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 3.968 seconds (JVM running for 4.963)
