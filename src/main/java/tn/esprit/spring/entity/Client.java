@@ -62,6 +62,9 @@ public class Client implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private List<Facture> factures;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
+	private List<Favoris> favoris;
+	
 	
 	public Client(Long idClient, String nom, String prenom, Date dateNaissance, String email, String password,
 			CategorieClient categorieClient, Profession profession) {
