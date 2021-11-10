@@ -19,6 +19,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -61,7 +63,7 @@ public class Client implements Serializable {
 	private Profession profession;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private List<Facture> factures;
-	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private List<Favoris> favoris;
 	
