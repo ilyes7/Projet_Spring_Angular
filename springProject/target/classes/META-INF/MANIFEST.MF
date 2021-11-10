@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springProject
+Implementation-Version: 1.0
+Built-By: sadok gachar
+Implementation-Vendor-Id: tn.esprit.spring
+Build-Jdk: 1.8.0_241
+Implementation-URL: https://spring.io/projects/spring-boot/springProje
+ ct
+Created-By: Maven Integration for Eclipse
+
