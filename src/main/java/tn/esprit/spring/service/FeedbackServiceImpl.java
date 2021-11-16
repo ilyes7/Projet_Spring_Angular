@@ -22,16 +22,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
+import nonapi.io.github.classgraph.scanspec.WhiteBlackList.WhiteBlackListLeafname;
 import tn.esprit.spring.entity.Feedback;
 import tn.esprit.spring.repository.FeedbackRepository;
 
 @Service	
 @Slf4j
 public class FeedbackServiceImpl implements FeedbackService{
-	
+
 	@Autowired
 	FeedbackRepository feedbackRepository;
-	
+
 
 
 	@Override
@@ -39,7 +40,7 @@ public class FeedbackServiceImpl implements FeedbackService{
 	public List<Feedback> retrieveAllFeedback(long idProduit) {
 		List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findAllByIdProduit(idProduit);
 		for(Feedback feedback : feedbacks) {
-		
+
 			log.info("feedback: "+ feedback);
 		}
 		return feedbacks;
@@ -58,7 +59,7 @@ public class FeedbackServiceImpl implements FeedbackService{
 	@Override
 	public Feedback updateComment(long idFeedback,Feedback f) {
 		Feedback f1 = retrieveFeedback(idFeedback);
-	    f1.setCommentaire(f.getCommentaire());
+		f1.setCommentaire(f.getCommentaire());
 		return feedbackRepository.save(f1);
 	}
 
@@ -76,17 +77,17 @@ public class FeedbackServiceImpl implements FeedbackService{
 		log.info("dislikes: "+ dislikes);
 		return (long) dislikes;
 	}
-	
+
 	@Override
 	public Feedback updateReaction(Long idFeedback,Feedback f) {
 		//System.out.println(feedbackRepository.checkReaction((long) 2,(long) 3));
-		
-			Feedback f1 = retrieveFeedback(idFeedback);
-			f1.setReaction(f.getReaction());
 
-			//f.setCommentaire(null);
-			return feedbackRepository.save(f1);
-		}
+		Feedback f1 = retrieveFeedback(idFeedback);
+		f1.setReaction(f.getReaction());
+
+		//f.setCommentaire(null);
+		return feedbackRepository.save(f1);
+	}
 
 	@Override
 
@@ -95,12 +96,21 @@ public class FeedbackServiceImpl implements FeedbackService{
 		log.info("Feedback: "+ f);
 		return f ;		
 	}
-	
+
 	@Override
 	public Feedback addReaction(Feedback f) {
-		
-			return feedbackRepository.save(f);
+
+		return feedbackRepository.save(f);
 
 	}
+
+	@Override
+	public void banAccount() {
+		feedbackRepository.banAccount();
+	}
+
+
+
+
 
 }

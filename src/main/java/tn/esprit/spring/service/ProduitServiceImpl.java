@@ -1,6 +1,7 @@
 package tn.esprit.spring.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
@@ -22,56 +23,63 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.Produit;
+import tn.esprit.spring.enumerate.CategorieProduit;
 import tn.esprit.spring.repository.ProduitRepository;
 
-
-@Service	
+@Service
 @Slf4j
-public class ProduitServiceImpl implements ProduitService{
+public class ProduitServiceImpl implements ProduitService {
 
-	
 	@Autowired
 	ProduitRepository produitRepository;
-	
-	
-	
+
 	@Override
 	public List<Produit> retrieveAllProducts() {
 		List<Produit> produits = (List<Produit>) produitRepository.findAll();
-		for(Produit produit : produits) {
-		
-			log.info("produit: "+ produit);
+		for (Produit produit : produits) {
+
+			log.info("produit: " + produit);
 		}
 		return produits;
 	}
 
 	@Override
 	public Produit addProduit(Produit p) {
-		
+
 		return produitRepository.save(p);
 	}
 
 	@Override
 	public void deleteProduit(Long idProduit) throws NoSuchElementException {
-    	produitRepository.deleteById(idProduit);
+		produitRepository.deleteById(idProduit);
+	}
+	
+	@Override
+	public Produit updateProduit(Produit p) {
+		return produitRepository.save(p);
+	}  
+
+	@Override
+	public Produit retrieveProduit(Long id) throws NoSuchElementException {
+		Produit p = produitRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException("Produit not found for this id :: " + id));
+		return p;
 	}
 
 	@Override
-	public Produit updateProduit(Long id,Produit p) {
-		Produit p1 = retrieveProduit(id);
-		
-		p1.setCode(p.getCode()); 
-    	p1.setLibelle(p.getLibelle());
-    	p1.setPrixUnitaire(p.getPrixUnitaire());
-    	p1.setCategorieProduit(p.getCategorieProduit());
-		
-		return produitRepository.save(p1);
+	public List statCategProd() {
+		// System.out.println(produitRepository.statCategorieProduit());
+		return produitRepository.statCategorieProduit();
 	}
 
 	@Override
-	public Produit retrieveProduit(Long id) throws NoSuchElementException{
-		Produit p = produitRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Produit not found for this id :: " + id));
-		return p ;
+	public List bestSeller() {
+		return produitRepository.bestSeller();
+	}
+
+	@Override
+	public List mostLiked() {
+		return produitRepository.mostLiked();
 	}
 
 }

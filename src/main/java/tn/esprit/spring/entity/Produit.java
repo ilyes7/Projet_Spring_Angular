@@ -24,6 +24,8 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,6 +40,7 @@ import tn.esprit.spring.enumerate.CategorieProduit;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@ApiModel(description = "Produit")
 public class Produit implements Serializable{
 	/**
 	 * 
@@ -46,17 +49,23 @@ public class Produit implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idProduit")
+	@ApiModelProperty(value="idProduit")
 	private Long idProduit ; 
 	@Column(name = "code")
+	@ApiModelProperty(value="code")
 	private String code;
 	@Column(name = "libelle")
+	@ApiModelProperty(value="libelle")
 	private String libelle;
 	@Column(name = "prixUnitaire")
+	@ApiModelProperty(value="prixUnitaire")
 	private float prixUnitaire;
 	@Enumerated(EnumType.STRING)
+	@ApiModelProperty(value="categorieProduit")
 	private CategorieProduit categorieProduit;
 	@Column(name = "dateCreation")
 	@Temporal(TemporalType.DATE)
+	@ApiModelProperty(value="dateCreation")
 	private Date dateCreation;
 	
 	

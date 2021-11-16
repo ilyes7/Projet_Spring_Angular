@@ -33,7 +33,7 @@ public class DetailFacture implements Serializable {
 	private int pourcentageRemise;
 	@Column(name = "montantRemise")
 	private float montantRemise;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="detailFacture")
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Produit> produits;
 	@ManyToOne
 	Facture facture ;

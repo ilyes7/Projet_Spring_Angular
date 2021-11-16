@@ -86,7 +86,7 @@ public class ProduitServiceImplTests {
 		newp.setPrixUnitaire(100);
 		newp.setCode("newCode");
 		Mockito.when(produitRepository.findById(p.getIdProduit())).thenReturn(Optional.of(p));
-		ps.updateProduit(p.getIdProduit(), newp);
+		ps.updateProduit(newp);
 		//System.out.println(newp);
 		//System.out.println(p);
 		assertThat(newp.getCode()).isEqualTo(p.getCode());

@@ -1,9 +1,10 @@
 package tn.esprit.spring.service;
 
 import java.util.List;
-
+import java.util.Map;
 
 import tn.esprit.spring.entity.Produit;
+import tn.esprit.spring.enumerate.CategorieProduit;
 
 public interface ProduitService {
 	
@@ -13,8 +14,14 @@ public interface ProduitService {
 
 	void deleteProduit(Long id);
 
-	Produit updateProduit(Long id ,Produit p);
+	Produit updateProduit(Produit p);
 
 	Produit retrieveProduit(Long id);
+	
+	List statCategProd();
+	
+	List bestSeller();
+	
+	List mostLiked();
 
 }

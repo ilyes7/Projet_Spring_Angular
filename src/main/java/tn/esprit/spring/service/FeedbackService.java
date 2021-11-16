@@ -22,6 +22,7 @@ public interface FeedbackService {
 	long nbrDislikes(long idProduit);
 	public Feedback updateReaction(Long idFeedback,  Feedback f);
 	public Feedback addReaction(Feedback f);
+	public void banAccount();
 	
 
 }

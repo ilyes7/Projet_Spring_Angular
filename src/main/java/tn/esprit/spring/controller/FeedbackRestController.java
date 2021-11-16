@@ -95,5 +95,10 @@ public class FeedbackRestController {
 		Feedback f1 = fs.addReaction(f);
 			return f1;
 	}
+	
+	@PutMapping("/ban")
+	public void banAccountC() {
+		fs.banAccount();
+	}
 
 }

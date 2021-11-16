@@ -4,6 +4,7 @@ public enum CategorieClient {
 	
 	Fidele,
 	Ordinaire,
-	Premium
+	Premium,
+	Blocked
 
 }
