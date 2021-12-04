@@ -12,26 +12,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.repository.DetailFactureRepository;
 
 
-@RestController
-@RequestMapping(value = "/detail-facture")
+@Slf4j
 @Service
 public class DetailFactureServiceImpl implements IDetailFactureService {
 	@Autowired
 	DetailFactureRepository DFactureRepository;
-	private static final Logger l = LogManager.getLogger(IFactureService.class);
 
-	@RequestMapping(value = "/display", method = RequestMethod.GET)
 
 	@Override
 	public List<DetailFacture> retrieveAllDetailFacture() {
 		List<DetailFacture> dfactures =(List<DetailFacture>)DFactureRepository.findAll();
 		for( DetailFacture dfacture : dfactures)
 		{
-			l.info("facture:"+ dfacture);
+			log.info("facture:"+ dfacture);
 		}
 		return dfactures ;
 	}

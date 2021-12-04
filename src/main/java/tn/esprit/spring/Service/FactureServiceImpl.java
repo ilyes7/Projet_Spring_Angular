@@ -12,26 +12,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.FactureRepository;
 
-
-
-@RestController
-@RequestMapping(value = "/facture")
 @Service
+@Slf4j
 public class FactureServiceImpl implements IFactureService {
 	@Autowired
 	FactureRepository factureRepository;
-	private static final Logger l = LogManager.getLogger(IFactureService.class);
 
-	@RequestMapping(value = "/display", method = RequestMethod.GET)
 	@Override
 	public List<Facture> retrieveAllFacture() {
 		List<Facture> factures =(List<Facture>)factureRepository.findAll();
 		for( Facture facture : factures)
 		{
-			l.info("facture:"+ facture);
+			log.info("facture:"+ facture);
 		}
 		return factures ;
 	}
@@ -51,7 +47,7 @@ public class FactureServiceImpl implements IFactureService {
 	@Override
 	public Facture updateFacture(Facture c) {
 		c=factureRepository.save(c);
-		return null;
+		return c;
 	}
 
 	@Override
