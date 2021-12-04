@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -50,11 +51,11 @@ public class Produit implements Serializable{
 	@ManyToOne
 	Stock stock ;
 	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Fournisseur> fournissuers;
+	private List<Fournisseur> fournisseurs;
 	@ManyToOne
 	Rayon rayon ;
-	@ManyToOne
-	DetailFacture detailFacture ;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
+	private List<DetailFacture> detailFactures;
 	
 	
 	public Produit(Long idProduit, String code, String libelle, float prixUnitaire) {

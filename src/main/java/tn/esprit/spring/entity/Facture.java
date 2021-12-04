@@ -55,6 +55,8 @@ public class Facture implements Serializable {
 	private List<DetailFacture> detailFactures;
 	@ManyToOne
 	Client client ;
+	@ManyToOne
+	Coupon coupon ;
 	
 	
 	public Facture(Long idFacture, float montantRemise, float montantFacture, Date dateFacture, boolean active) {

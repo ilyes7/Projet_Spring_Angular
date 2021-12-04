@@ -38,16 +38,16 @@ public class DetailFacture implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idDetailFacture")
 	private Long idDetailFacture;
-	@Column(name = "qte")
-	private int qte;
-	@Column(name = "prixTotal")
-	private float prixTotal;
+	@Column(name = "quantite")
+	private int quantite;
+	@Column(name = "sousTotal")
+	private float sousTotal;
 	@Column(name = "pourcentageRemise")
 	private int pourcentageRemise;
 	@Column(name = "montantRemise")
 	private float montantRemise;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="detailFacture")
-	private List<Produit> produits;
+	@ManyToOne
+	Produit produit ;
 	@ManyToOne
 	Facture facture ;
 	
@@ -55,15 +55,15 @@ public class DetailFacture implements Serializable {
 	public DetailFacture(Long idDetailFacture, int qte, float prixTotal, int pourcentageRemise, float montantRemise) {
 		super();
 		this.idDetailFacture = idDetailFacture;
-		this.qte = qte;
-		this.prixTotal = prixTotal;
+		this.quantite = qte;
+		this.sousTotal = prixTotal;
 		this.pourcentageRemise = pourcentageRemise;
 		this.montantRemise = montantRemise;
 	}
 	public DetailFacture(int qte, float prixTotal, int pourcentageRemise, float montantRemise) {
 		super();
-		this.qte = qte;
-		this.prixTotal = prixTotal;
+		this.quantite = qte;
+		this.sousTotal = prixTotal;
 		this.pourcentageRemise = pourcentageRemise;
 		this.montantRemise = montantRemise;
 	}
