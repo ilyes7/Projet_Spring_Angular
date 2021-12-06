@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.Service.ICouponService;
 import tn.esprit.spring.entity.Coupon;
 
 @RestController
+@Api(tags = "Coupon management")
 @RequestMapping("/coupon")
 public class CouponRestController {
 	@Autowired
@@ -25,6 +28,7 @@ public class CouponRestController {
 	
 	
 	// http://localhost:8089/SpringMVC/coupon/retrieve-all-coupons
+		@ApiOperation(value = "Récupérer la liste des coupons")
 		@GetMapping("/retrieve-all-coupons")
 		@ResponseBody
 			public List<Coupon> getCoupons() {
@@ -33,12 +37,14 @@ public class CouponRestController {
 			}
 
 		//http://localhost:8089/SpringMVC/coupon/retrieve-coupon/14
+		@ApiOperation(value = "afficher un coupon")
 		@GetMapping("/retrieve-coupon/{coupon-id}")
 		@ResponseBody
 		public Coupon retrieveCoupon(@PathVariable("coupon-id") Long couponId) {
 		return couponService.retrieveCoupon(couponId);
 		}
 		//http://localhost:8089/SpringMVC/coupon/add-coupon
+		@ApiOperation(value = "ajouter un coupon")
 		@PostMapping("/add-coupon")
 		@ResponseBody
 		public Coupon addCoupon(@RequestBody Coupon c) throws ParseException
@@ -48,6 +54,7 @@ public class CouponRestController {
 		}
 
 		//http://localhost:8089/SpringMVC/coupon/remove-coupon/{coupon-id}
+		@ApiOperation(value = "supprimer un coupon")
 		@DeleteMapping("remove-coupon/{coupon-id}")
 		@ResponseBody
 		public void removeCoupon(@PathVariable("coupon-id") Long couponId) {
@@ -55,6 +62,7 @@ public class CouponRestController {
 		}
 
 		//http://localhost:8089/SpringMVC/coupon/modify-coupon
+		@ApiOperation(value = "modifier un coupon")
 		@PutMapping("/modify-coupon")
 		@ResponseBody
 		public Coupon modifyCoupon(@RequestBody Coupon coupon) {

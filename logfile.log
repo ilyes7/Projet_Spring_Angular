@@ -1,219 +1,54 @@
-2021-12-04 18:45:54.327  INFO 18956 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 18956 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:45:54.332  INFO 18956 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:45:54.723  INFO 18956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:45:54.760  INFO 18956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:45:55.029  INFO 18956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:45:55.035  INFO 18956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:45:55.035  INFO 18956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:45:55.082  INFO 18956 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:45:55.082  INFO 18956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 719 ms
-2021-12-04 18:45:55.184  INFO 18956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:45:55.217  INFO 18956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:45:55.304  INFO 18956 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:45:55.373  INFO 18956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:45:55.516  INFO 18956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:45:55.523  INFO 18956 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:45:56.260  INFO 18956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:45:56.265  INFO 18956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:45:56.453  WARN 18956 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:45:56.627  INFO 18956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:45:56.633  INFO 18956 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.554 seconds (JVM running for 3.104)
-2021-12-04 18:46:20.566  INFO 18956 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 18:46:20.696  INFO 18956 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:46:20.698  INFO 18956 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 18:46:20.701  INFO 18956 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 18:46:27.426  INFO 3004 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 3004 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:46:27.427  INFO 3004 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:46:27.797  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:46:27.832  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:46:28.086  INFO 3004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:46:28.091  INFO 3004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:46:28.091  INFO 3004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:46:28.145  INFO 3004 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:46:28.146  INFO 3004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 692 ms
-2021-12-04 18:46:28.244  INFO 3004 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:46:28.267  INFO 3004 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:46:28.331  INFO 3004 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:46:28.384  INFO 3004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:46:28.491  INFO 3004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:46:28.497  INFO 3004 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:46:29.062  INFO 3004 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:46:29.068  INFO 3004 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:46:29.254  WARN 3004 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:46:29.440  INFO 3004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:46:29.446  INFO 3004 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.253 seconds (JVM running for 2.721)
-2021-12-04 18:48:13.779  INFO 3004 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 18:48:13.900  INFO 3004 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:48:13.902  INFO 3004 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 18:48:13.905  INFO 3004 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 18:48:55.996  INFO 8804 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 8804 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:48:55.997  INFO 8804 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:48:56.335  INFO 8804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:48:56.368  INFO 8804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:48:56.607  INFO 8804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:48:56.617  INFO 8804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:48:56.617  INFO 8804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:48:56.662  INFO 8804 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:48:56.662  INFO 8804 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 642 ms
-2021-12-04 18:48:56.751  INFO 8804 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:48:56.776  INFO 8804 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:48:56.835  INFO 8804 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:48:56.886  INFO 8804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:48:56.986  INFO 8804 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:48:56.992  INFO 8804 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:48:57.507  INFO 8804 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:48:57.512  INFO 8804 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:48:57.677  WARN 8804 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:48:57.847  INFO 8804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:48:57.853  INFO 8804 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.067 seconds (JVM running for 2.464)
-2021-12-04 18:51:20.744  INFO 8804 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 18:51:20.857  INFO 8804 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:51:20.858  INFO 8804 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 18:51:20.861  INFO 8804 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 18:52:02.643  INFO 4920 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 4920 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:52:02.644  INFO 4920 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:52:02.983  INFO 4920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:52:03.021  INFO 4920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:52:03.258  INFO 4920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:52:03.268  INFO 4920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:52:03.268  INFO 4920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:52:03.312  INFO 4920 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:52:03.312  INFO 4920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 644 ms
-2021-12-04 18:52:03.406  INFO 4920 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:52:03.429  INFO 4920 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:52:03.491  INFO 4920 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:52:03.542  INFO 4920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:52:03.646  INFO 4920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:52:03.652  INFO 4920 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:52:04.184  INFO 4920 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:52:04.190  INFO 4920 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:52:04.357  WARN 4920 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:52:04.520  INFO 4920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:52:04.526  INFO 4920 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.096 seconds (JVM running for 2.511)
-2021-12-04 18:52:50.044  INFO 4920 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 18:52:50.155  INFO 4920 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:52:50.156  INFO 4920 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 18:52:50.159  INFO 4920 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 18:53:47.440  INFO 12224 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 12224 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:53:47.441  INFO 12224 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:53:47.780  INFO 12224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:53:47.813  INFO 12224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:53:48.056  INFO 12224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:53:48.065  INFO 12224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:53:48.065  INFO 12224 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:53:48.109  INFO 12224 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:53:48.110  INFO 12224 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 646 ms
-2021-12-04 18:53:48.201  INFO 12224 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:53:48.222  INFO 12224 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:53:48.284  INFO 12224 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:53:48.335  INFO 12224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:53:48.444  INFO 12224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:53:48.450  INFO 12224 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:53:49.043  INFO 12224 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:53:49.049  INFO 12224 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:53:49.220  WARN 12224 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:53:49.380  INFO 12224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:53:49.386  INFO 12224 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.16 seconds (JVM running for 2.584)
-2021-12-04 18:54:32.828  INFO 12224 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 18:54:32.949  INFO 12224 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:54:32.951  INFO 12224 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 18:54:32.954  INFO 12224 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 18:54:41.997  INFO 12084 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 12084 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:54:41.998  INFO 12084 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:54:42.336  INFO 12084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:54:42.370  INFO 12084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:54:42.607  INFO 12084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:54:42.615  INFO 12084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:54:42.616  INFO 12084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:54:42.660  INFO 12084 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:54:42.660  INFO 12084 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 638 ms
-2021-12-04 18:54:42.751  INFO 12084 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:54:42.774  INFO 12084 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:54:42.836  INFO 12084 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:54:42.886  INFO 12084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:54:42.990  INFO 12084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:54:42.997  INFO 12084 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:54:43.512  INFO 12084 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:54:43.518  INFO 12084 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:54:43.684  WARN 12084 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:54:43.846  INFO 12084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:54:43.851  INFO 12084 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.064 seconds (JVM running for 2.463)
-2021-12-04 18:56:04.018  INFO 12084 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 18:56:04.138  INFO 12084 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:56:04.140  INFO 12084 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 18:56:04.143  INFO 12084 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 18:56:18.803  INFO 18148 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 18148 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 18:56:18.804  INFO 18148 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 18:56:19.141  INFO 18148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 18:56:19.174  INFO 18148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
-2021-12-04 18:56:19.413  INFO 18148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 18:56:19.422  INFO 18148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 18:56:19.422  INFO 18148 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 18:56:19.466  INFO 18148 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 18:56:19.466  INFO 18148 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 639 ms
-2021-12-04 18:56:19.557  INFO 18148 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 18:56:19.580  INFO 18148 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 18:56:19.640  INFO 18148 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 18:56:19.691  INFO 18148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 18:56:19.795  INFO 18148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 18:56:19.801  INFO 18148 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 18:56:20.327  INFO 18148 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 18:56:20.332  INFO 18148 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 18:56:20.502  WARN 18148 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 18:56:20.668  INFO 18148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 18:56:20.673  INFO 18148 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.08 seconds (JVM running for 2.478)
-2021-12-04 19:16:30.373  WARN 18148 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m40s203ms7µs200ns).
-2021-12-04 21:15:58.206  WARN 18148 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m26s966ms779µs600ns).
-2021-12-04 21:32:32.159  WARN 18148 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m3s864ms311µs700ns).
-2021-12-04 21:35:15.250  INFO 18148 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 21:35:15.365  INFO 18148 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 21:35:15.366  INFO 18148 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 21:35:15.369  INFO 18148 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 21:36:37.356  INFO 18876 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 18876 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 21:36:37.357  INFO 18876 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 21:36:37.699  INFO 18876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 21:36:37.735  INFO 18876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-2021-12-04 21:36:37.975  INFO 18876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 21:36:37.984  INFO 18876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 21:36:37.985  INFO 18876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 21:36:38.029  INFO 18876 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 21:36:38.029  INFO 18876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 649 ms
-2021-12-04 21:36:38.124  INFO 18876 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 21:36:38.156  INFO 18876 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 21:36:38.233  INFO 18876 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 21:36:38.285  INFO 18876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 21:36:38.387  INFO 18876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 21:36:38.393  INFO 18876 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 21:36:39.042  INFO 18876 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 21:36:39.048  INFO 18876 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 21:36:39.226  WARN 18876 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 21:36:39.438  INFO 18876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 21:36:39.444  INFO 18876 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.307 seconds (JVM running for 2.721)
-2021-12-04 21:39:32.355  INFO 18876 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 21:39:32.478  INFO 18876 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 21:39:32.479  INFO 18876 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 21:39:32.483  INFO 18876 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-12-04 21:39:40.758  INFO 9732 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 9732 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
-2021-12-04 21:39:40.760  INFO 9732 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
-2021-12-04 21:39:41.097  INFO 9732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-04 21:39:41.131  INFO 9732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-2021-12-04 21:39:41.375  INFO 9732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2021-12-04 21:39:41.384  INFO 9732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-12-04 21:39:41.384  INFO 9732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
-2021-12-04 21:39:41.427  INFO 9732 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
-2021-12-04 21:39:41.427  INFO 9732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 645 ms
-2021-12-04 21:39:41.516  INFO 9732 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-04 21:39:41.539  INFO 9732 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-12-04 21:39:41.601  INFO 9732 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-04 21:39:41.652  INFO 9732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-12-04 21:39:41.755  INFO 9732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-12-04 21:39:41.761  INFO 9732 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-12-04 21:39:42.283  INFO 9732 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-04 21:39:42.288  INFO 9732 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 21:39:42.453  WARN 9732 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-04 21:39:42.613  INFO 9732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
-2021-12-04 21:39:42.619  INFO 9732 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.074 seconds (JVM running for 2.476)
-2021-12-04 21:42:50.473  INFO 9732 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2021-12-04 21:42:50.595  INFO 9732 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-04 21:42:50.597  INFO 9732 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-12-04 21:42:50.600  INFO 9732 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-06 09:46:18.198  INFO 14276 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 14276 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
+2021-12-06 09:46:18.204  INFO 14276 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
+2021-12-06 09:46:18.739  INFO 14276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-06 09:46:18.799  INFO 14276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+2021-12-06 09:46:19.238  INFO 14276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2021-12-06 09:46:19.246  INFO 14276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-06 09:46:19.247  INFO 14276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-06 09:46:19.311  INFO 14276 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-12-06 09:46:19.311  INFO 14276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
+2021-12-06 09:46:19.442  INFO 14276 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-06 09:46:19.488  INFO 14276 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-06 09:46:19.614  INFO 14276 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-06 09:46:19.701  INFO 14276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-06 09:46:19.865  INFO 14276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-06 09:46:19.874  INFO 14276 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-12-06 09:46:20.815  INFO 14276 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-06 09:46:20.823  INFO 14276 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-06 09:46:21.061  WARN 14276 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-06 09:46:21.332  INFO 14276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
+2021-12-06 09:46:21.340  INFO 14276 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 3.465 seconds (JVM running for 4.132)
+2021-12-06 09:47:01.098  INFO 14276 --- [http-nio-8089-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-06 09:47:01.098  INFO 14276 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-06 09:47:01.100  INFO 14276 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-06 09:49:17.366  INFO 14276 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-12-06 09:49:17.690  INFO 14276 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-06 09:49:17.691  INFO 14276 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-06 09:49:17.694  INFO 14276 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-06 09:55:27.216  INFO 9676 --- [main] t.e.s.GestionMagasinStockApplication     : Starting GestionMagasinStockApplication using Java 1.8.0_60 on DESKTOP-EQ999DU with PID 9676 (C:\Work\workspace-sts\Projet_Spring_Angular\target\classes started by MSI in C:\Work\workspace-sts\Projet_Spring_Angular)
+2021-12-06 09:55:27.217  INFO 9676 --- [main] t.e.s.GestionMagasinStockApplication     : No active profile set, falling back to default profiles: default
+2021-12-06 09:55:27.762  INFO 9676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-06 09:55:27.796  INFO 9676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 4 JPA repository interfaces.
+2021-12-06 09:55:28.085  INFO 9676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2021-12-06 09:55:28.090  INFO 9676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-06 09:55:28.090  INFO 9676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-06 09:55:28.141  INFO 9676 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-12-06 09:55:28.141  INFO 9676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 901 ms
+2021-12-06 09:55:28.243  INFO 9676 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-06 09:55:28.270  INFO 9676 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-06 09:55:28.329  INFO 9676 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-06 09:55:28.376  INFO 9676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-06 09:55:28.496  INFO 9676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-06 09:55:28.502  INFO 9676 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-12-06 09:55:29.030  INFO 9676 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-06 09:55:29.035  INFO 9676 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-06 09:55:29.363  WARN 9676 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-06 09:55:29.565  INFO 9676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
+2021-12-06 09:55:29.863  INFO 9676 --- [main] t.e.s.GestionMagasinStockApplication     : Started GestionMagasinStockApplication in 2.891 seconds (JVM running for 3.37)
+2021-12-06 09:55:39.542  INFO 9676 --- [http-nio-8089-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-06 09:55:39.543  INFO 9676 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-06 09:55:39.544  INFO 9676 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-06 09:56:55.065  INFO 9676 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-12-06 09:56:55.530  INFO 9676 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-06 09:56:55.532  INFO 9676 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-06 09:56:55.535  INFO 9676 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

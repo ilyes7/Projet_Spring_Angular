@@ -13,17 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.Service.IDetailFactureService;
 
 @RestController
+@Api(tags = "Detail Facture management")
 @RequestMapping("/detail-facture")
 public class DetailFactureRestController {
 	@Autowired
 	IDetailFactureService detailFactureService;
 	
 	// http://localhost:8089/SpringMVC/detail-facture/retrieve-all-factures
+	@ApiOperation(value = "Récupérer la liste des details factures")
 	@GetMapping("/retrieve-all-factures")
 	@ResponseBody
 		public List<DetailFacture> getDetailFactures() {
@@ -32,12 +35,14 @@ public class DetailFactureRestController {
 		}
 
 	//http://localhost:8089/SpringMVC/detail-facture/retrieve-facture/14
+	@ApiOperation(value = "Récupérer une detail facture")
 	@GetMapping("/retrieve-facture/{facture-id}")
 	@ResponseBody
 	public DetailFacture retrieveDetailFacture(@PathVariable("facture-id") Long factureId) {
 	return detailFactureService.retrieveDetailFacture(factureId).orElse(null);
 	}
 	//http://localhost:8089/SpringMVC/detail-facture/add-facture
+	@ApiOperation(value = "Ajouter une detail facture")
 	@PostMapping("/add-facture")
 	@ResponseBody
 	public DetailFacture addDetailFacture(@RequestBody DetailFacture c) throws ParseException
@@ -47,6 +52,7 @@ public class DetailFactureRestController {
 	}
 
 	//http://localhost:8089/SpringMVC/detail-facture/remove-facture/{facture-id}
+	@ApiOperation(value = "Supprimer une detail facture")
 	@DeleteMapping("remove-facture/{facture-id}")
 	@ResponseBody
 	public void removeDetailFacture(@PathVariable("facture-id") Long factureId) {
@@ -55,6 +61,7 @@ public class DetailFactureRestController {
 
 	//http://localhost:8089/SpringMVC/detail-facture/modify-facture
 	@PutMapping("/modify-facture")
+	@ApiOperation(value = "modifier une detail facture")
 	@ResponseBody
 	public DetailFacture modifyDetailFacture(@RequestBody DetailFacture detailFacture) {
 	return detailFactureService.updateDetailFacture(detailFacture);
