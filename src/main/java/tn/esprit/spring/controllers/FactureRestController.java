@@ -1,6 +1,8 @@
 package tn.esprit.spring.controllers;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.repository.ClientRepository;
+import tn.esprit.spring.repository.FactureRepository;
+import tn.esprit.spring.Service.IClientService;
 import tn.esprit.spring.Service.IFactureService;
 
 @RestController
@@ -25,6 +31,11 @@ import tn.esprit.spring.Service.IFactureService;
 public class FactureRestController {
 	@Autowired
 	IFactureService factureService;
+	
+	@Autowired
+	FactureRepository factureRepository;
+	@Autowired
+	ClientRepository clientRepository;
 	
 	// http://localhost:8089/SpringMVC/facture/retrieve-all-factures
 	@ApiOperation(value = "Récupérer la liste des factures")
@@ -48,6 +59,10 @@ public class FactureRestController {
 	@ResponseBody
 	public Facture addFacture(@RequestBody Facture c) throws ParseException
 	{
+		LocalDateTime localDate = LocalDateTime.now();
+		
+		c.setActive(false);	
+		c.setDateFacture(localDate);
 		Facture facture = factureService.addFacture(c);
 		return facture;
 	}
@@ -67,6 +82,7 @@ public class FactureRestController {
 	public Facture modifyFacture(@RequestBody Facture facture) {
 	return factureService.updateFacture(facture);
 	}
+	
 	
 	
 

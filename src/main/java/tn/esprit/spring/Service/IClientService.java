@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 import tn.esprit.spring.entity.Client;
+import tn.esprit.spring.entity.Facture;
 
 public interface IClientService {
 	List<Client> retrieveAllClients();
@@ -14,6 +15,6 @@ public interface IClientService {
 
 	Client updateClient(Client c);
 
-	Optional<Client> retrieveClient(Long id);
-
+	  Client retrieveClient(Long id);
+	  
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Client;
+import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.Service.IClientService;
 
 @RestController
@@ -31,7 +32,9 @@ IClientService clientService;
 //http://localhost:8089/SpringMVC/client/retrieve-client/14
 @GetMapping("/retrieve-client/{client-id}")
 @ResponseBody
-public Optional<Client> retrieveClient(@PathVariable("client-id") Long clientId) {
+public Client retrieveClient(@PathVariable("client-id") Long clientId) {
 return clientService.retrieveClient(clientId);
 }
+
+
 }

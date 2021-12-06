@@ -3,6 +3,8 @@ package tn.esprit.spring.entity;
 
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -47,8 +49,8 @@ public class Facture implements Serializable {
 	@Column(name="montantFacture")
 	private float montantFacture;
 	@Column(name="dateFacture")
-	@Temporal(TemporalType.DATE)
-	private Date dateFacture;
+	//@Temporal(TemporalType.DATE)
+	private LocalDateTime dateFacture;
 	@Column(name="active")
 	private boolean active ;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="facture")
@@ -59,7 +61,7 @@ public class Facture implements Serializable {
 	Coupon coupon ;
 	
 	
-	public Facture(Long idFacture, float montantRemise, float montantFacture, Date dateFacture, boolean active) {
+	public Facture(Long idFacture, float montantRemise, float montantFacture, LocalDateTime dateFacture, boolean active) {
 		super();
 		this.idFacture = idFacture;
 		this.montantRemise = montantRemise;
@@ -67,7 +69,7 @@ public class Facture implements Serializable {
 		this.dateFacture = dateFacture;
 		this.active = active;
 	}
-	public Facture(float montantRemise, float montantFacture, Date dateFacture, boolean active) {
+	public Facture(float montantRemise, float montantFacture, LocalDateTime dateFacture, boolean active) {
 		super();
 		this.montantRemise = montantRemise;
 		this.montantFacture = montantFacture;

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Client;
+import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.enumerate.CategorieClient;
 import tn.esprit.spring.enumerate.Profession;
 import tn.esprit.spring.repository.ClientRepository;
@@ -73,10 +74,13 @@ public class ClientServiceImpl implements IClientService {
 	}
 
 	@Override
-	public Optional<Client> retrieveClient(Long id) {
-		// TODO Auto-generated method stub
-		return clientRepository.findById(id);
+	public Client retrieveClient(Long id) {
+		return clientRepository.findById(id).orElse(null);
 	}
+
+	
+	
+
 	
 
 
