@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.FactureRepository;
 
@@ -54,5 +55,7 @@ public class FactureServiceImpl implements IFactureService {
 	public Optional<Facture> retrieveFacture(Long id) {
 		return factureRepository.findById(id);
 	}
+
+	
 
 }

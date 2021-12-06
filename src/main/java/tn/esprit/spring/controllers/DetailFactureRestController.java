@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entity.DetailFacture;
+import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.Service.FactureServiceImpl;
 import tn.esprit.spring.Service.IDetailFactureService;
+import tn.esprit.spring.Service.IFactureService;
 
 @RestController
 @Api(tags = "Detail Facture management")
@@ -24,6 +27,8 @@ import tn.esprit.spring.Service.IDetailFactureService;
 public class DetailFactureRestController {
 	@Autowired
 	IDetailFactureService detailFactureService;
+	@Autowired
+	IFactureService factser;
 	
 	// http://localhost:8089/SpringMVC/detail-facture/retrieve-all-factures
 	@ApiOperation(value = "Récupérer la liste des details factures")
@@ -43,11 +48,12 @@ public class DetailFactureRestController {
 	}
 	//http://localhost:8089/SpringMVC/detail-facture/add-facture
 	@ApiOperation(value = "Ajouter une detail facture")
-	@PostMapping("/add-facture")
+	@PostMapping("/add-facture/{facture-id}")
 	@ResponseBody
-	public DetailFacture addDetailFacture(@RequestBody DetailFacture c) throws ParseException
+	public DetailFacture addDetailFacture(@RequestBody DetailFacture c,@PathVariable("facture-id") Long factureId) throws ParseException
 	{
-		DetailFacture detailFacture = detailFactureService.addDetailFacture(c);
+		Facture f=factser.retrieveFacture(factureId).orElse(null);
+		DetailFacture detailFacture = detailFactureService.addDetailFacture(c,f);
 		return detailFacture;
 	}
 

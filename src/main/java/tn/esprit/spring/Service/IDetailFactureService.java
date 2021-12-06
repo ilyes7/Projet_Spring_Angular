@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import tn.esprit.spring.entity.DetailFacture;
+import tn.esprit.spring.entity.Facture;
 
 
 public interface IDetailFactureService {
 	
 	List<DetailFacture> retrieveAllDetailFacture();
 
-	DetailFacture addDetailFacture(DetailFacture c) throws ParseException;
+	DetailFacture addDetailFacture(DetailFacture c , Facture f) throws ParseException;
 
 	void deleteDetailFacture(Long id);
 

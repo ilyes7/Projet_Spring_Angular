@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.DetailFacture;
+import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.DetailFactureRepository;
+import tn.esprit.spring.repository.FactureRepository;
 
 
 @Slf4j
@@ -22,6 +24,8 @@ import tn.esprit.spring.repository.DetailFactureRepository;
 public class DetailFactureServiceImpl implements IDetailFactureService {
 	@Autowired
 	DetailFactureRepository DFactureRepository;
+	@Autowired
+	IFactureService factureService;
 
 
 	@Override
@@ -35,9 +39,12 @@ public class DetailFactureServiceImpl implements IDetailFactureService {
 	}
 
 	@Override
-	public DetailFacture addDetailFacture(DetailFacture f) throws ParseException {
-		f=DFactureRepository.save(f);
-		return f;
+	public DetailFacture addDetailFacture(DetailFacture df, Facture fact) throws ParseException {
+	
+		df.setFacture(fact);
+		df=DFactureRepository.save(df);
+		
+		return df;
 	}
 
 	@Override

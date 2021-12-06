@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
+import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.entity.Facture;
 
 public interface IFactureService {
@@ -16,6 +17,7 @@ public interface IFactureService {
 	Facture updateFacture(Facture c);
 
 	Optional<Facture> retrieveFacture(Long id);
+	
 
 
 }
