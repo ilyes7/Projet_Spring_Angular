@@ -19,7 +19,7 @@ import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.enumerate.CategorieClient;
 import tn.esprit.spring.enumerate.Profession;
 import tn.esprit.spring.repository.ClientRepository;
-import tn.esprit.spring.Service.ClientServiceImpl;
+import tn.esprit.spring.service.ClientServiceImpl;
 @RequestMapping(value = "/test")
 @RunWith(SpringRunner.class)
 @SpringBootTest

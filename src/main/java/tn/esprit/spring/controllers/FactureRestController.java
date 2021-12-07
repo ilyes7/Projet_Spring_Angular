@@ -22,8 +22,8 @@ import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.ClientRepository;
 import tn.esprit.spring.repository.FactureRepository;
-import tn.esprit.spring.Service.IClientService;
-import tn.esprit.spring.Service.IFactureService;
+import tn.esprit.spring.service.IClientService;
+import tn.esprit.spring.service.IFactureService;
 
 @RestController
 @Api(tags = "Facture management")

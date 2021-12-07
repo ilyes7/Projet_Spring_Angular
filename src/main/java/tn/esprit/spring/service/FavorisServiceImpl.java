@@ -1,4 +1,4 @@
-package tn.esprit.spring.Service;
+package tn.esprit.spring.service;
 
 public class FavorisServiceImpl {
 

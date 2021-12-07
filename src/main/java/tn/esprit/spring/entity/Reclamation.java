@@ -1,32 +1,26 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
-@Table(name="Favoris")
-public class Favoris implements Serializable{
+@Table(name="Reclamation")
+public class Reclamation  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 @Column(name = "idFavoris")
-	 private Long idFavoris ;
-	 
-	 @ManyToOne
-	 Produit produit;
-
-	 @ManyToOne
-	 Client client;
+	 @Column(name = "idReclamation")
+	 private Long idReclamation;
 }

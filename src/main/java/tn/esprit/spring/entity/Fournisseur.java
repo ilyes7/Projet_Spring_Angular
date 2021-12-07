@@ -40,6 +40,9 @@ public class Fournisseur implements Serializable {
 	 private String code;
 	 @Column(name = "libelle")
 	 private String libelle;
+	 @Column(name="email")
+	 private String email;
+	 
 	public Fournisseur(Long idFournisseur, String code, String libelle) {
 		super();
 		this.idFournisseur = idFournisseur;

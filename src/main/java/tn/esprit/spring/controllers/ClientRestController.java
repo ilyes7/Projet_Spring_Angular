@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
-import tn.esprit.spring.Service.IClientService;
+import tn.esprit.spring.service.IClientService;
 
 @RestController
 @RequestMapping("/client")

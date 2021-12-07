@@ -4,10 +4,13 @@ package tn.esprit.spring.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,21 +19,28 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-import lombok.EqualsAndHashCode;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import tn.esprit.spring.enumerate.CategorieClient;
-import tn.esprit.spring.enumerate.Profession;
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@RequiredArgsConstructor
+import tn.esprit.spring.enumerate.CategorieProduit;
+
 @Entity
 @Table(name = "Produit")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@ApiModel(description = "Produit")
 public class Produit implements Serializable{
 	/**
 	 * 
@@ -39,65 +49,94 @@ public class Produit implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idProduit")
+	@ApiModelProperty(value="idProduit")
 	private Long idProduit ; 
 	@Column(name = "code")
+	@ApiModelProperty(value="code")
 	private String code;
 	@Column(name = "libelle")
+	@ApiModelProperty(value="libelle")
 	private String libelle;
 	@Column(name = "prixUnitaire")
+	@ApiModelProperty(value="prixUnitaire")
 	private float prixUnitaire;
-	@OneToOne
-	private DetailProduit detailproduit ;
+	@Enumerated(EnumType.STRING)
+	@ApiModelProperty(value="categorieProduit")
+	private CategorieProduit categorieProduit;
+	@Column(name = "dateCreation")
+	@Temporal(TemporalType.DATE)
+	@ApiModelProperty(value="dateCreation")
+	private Date dateCreation;
+	
+	
+	
+	@JsonIgnore
 	@ManyToOne
-	Stock stock ;
+	@ToString.Exclude Stock stock ;
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Fournisseur> fournisseurs;
+	@ToString.Exclude private List<Fournisseur> fournissuers;
+	@JsonIgnore
 	@ManyToOne
-	Rayon rayon ;
+	@ToString.Exclude Rayon rayon ;
+	@JsonIgnore
+	@ManyToOne
+	@ToString.Exclude DetailFacture detailFacture ;
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
-	private List<DetailFacture> detailFactures;
+	@ToString.Exclude private Set<Feedback> listFeedback;
+	
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "produit")
+	private List<Favoris> favoris;
+	
+	private String picture;
+
 	
 	
-	public Produit(Long idProduit, String code, String libelle, float prixUnitaire) {
+	
+	public Produit(String code, String libelle, float prixUnitaire, CategorieProduit categorieProduit) {
+		super();
+		this.code = code;
+		this.libelle = libelle;
+		this.prixUnitaire = prixUnitaire;
+		this.categorieProduit = categorieProduit;
+	}
+
+
+	
+	
+	
+	public Produit(Long idProduit) {
+		super();
+		this.idProduit = idProduit;
+	}
+
+  
+
+	public Produit(String code, String libelle, float prixUnitaire, CategorieProduit categorieProduit,
+			Date dateCreation) {
+		super();
+		this.code = code;
+		this.libelle = libelle;
+		this.prixUnitaire = prixUnitaire;
+		this.categorieProduit = categorieProduit;
+		this.dateCreation = dateCreation;
+	}
+
+
+
+
+
+	public Produit(Long idProduit, String code, String libelle, float prixUnitaire, CategorieProduit categorieProduit) {
 		super();
 		this.idProduit = idProduit;
 		this.code = code;
 		this.libelle = libelle;
 		this.prixUnitaire = prixUnitaire;
+		this.categorieProduit = categorieProduit;
 	}
-	public Produit(String code, String libelle, float prixUnitaire) {
-		super();
-		this.code = code;
-		this.libelle = libelle;
-		this.prixUnitaire = prixUnitaire;
-	}
-	/*public Produit() {
-		super();
-	}
-	public Long getidProduit() {
-		return idProduit;
-	}
-	public void setidProduit(Long idProduit) {
-		this.idProduit = idProduit;
-	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getLibelle() {
-		return libelle;
-	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-	public float getPrixUnitaire() {
-		return prixUnitaire;
-	}
-	public void setPrixUnitaire(float prixUnitaire) {
-		this.prixUnitaire = prixUnitaire;
-	}*/
+	
 	
 	
 }

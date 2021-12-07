@@ -17,9 +17,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.entity.Facture;
-import tn.esprit.spring.Service.FactureServiceImpl;
-import tn.esprit.spring.Service.IDetailFactureService;
-import tn.esprit.spring.Service.IFactureService;
+import tn.esprit.spring.service.FactureServiceImpl;
+import tn.esprit.spring.service.IDetailFactureService;
+import tn.esprit.spring.service.IFactureService;
 
 @RestController
 @Api(tags = "Detail Facture management")

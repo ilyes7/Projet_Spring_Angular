@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import tn.esprit.spring.Service.ICouponService;
 import tn.esprit.spring.entity.Coupon;
+import tn.esprit.spring.service.ICouponService;
 
 @RestController
 @Api(tags = "Coupon management")
