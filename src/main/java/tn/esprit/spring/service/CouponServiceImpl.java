@@ -50,10 +50,10 @@ public class CouponServiceImpl implements ICouponService{
 	}
 
 	@Override
-	public void generateCoupon() {
+	public String generateCoupon() {
 	    int leftLimit = 97; // letter 'a'
 	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 5;
+	    int targetStringLength = 4;
 	    Random random = new Random();
 	    Random randomNumber = new Random();
 
@@ -68,5 +68,6 @@ public class CouponServiceImpl implements ICouponService{
 	  	      .toString();
 
 	    System.out.println(generatedString+generatedNumber);
+	    return (generatedString+generatedNumber);
 	}
 }

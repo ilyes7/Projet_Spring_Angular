@@ -73,8 +73,8 @@ public class CouponRestController {
 		@ApiOperation(value = "generer un coupon")
 		@GetMapping("/generate-coupon")
 		@ResponseBody
-		public void generateCoupon() {
-		 couponService.generateCoupon();
+		public String generateCoupon() {
+		 return couponService.generateCoupon();
 		}
 
 }

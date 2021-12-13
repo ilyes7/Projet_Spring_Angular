@@ -17,6 +17,6 @@ public interface ICouponService {
 
 	Coupon retrieveCoupon(Long id);
 	
-	public void generateCoupon();
+	public String generateCoupon();
 
 }

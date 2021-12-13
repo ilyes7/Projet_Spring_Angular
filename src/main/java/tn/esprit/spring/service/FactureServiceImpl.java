@@ -35,6 +35,7 @@ public class FactureServiceImpl implements IFactureService {
 
 	@Override
 	public Facture addFacture(Facture f) throws ParseException {
+		f.setActive(true);
 		f=factureRepository.save(f);
 		return f;
 	}
@@ -54,6 +55,13 @@ public class FactureServiceImpl implements IFactureService {
 	@Override
 	public Optional<Facture> retrieveFacture(Long id) {
 		return factureRepository.findById(id);
+	}
+
+	@Override
+	public Facture PasserCommande(Facture c) {
+		c.setActive(false);
+		c=factureRepository.save(c);
+		return c;
 	}
 
 	

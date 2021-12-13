@@ -18,6 +18,7 @@ public interface IFactureService {
 
 	Optional<Facture> retrieveFacture(Long id);
 	
+	Facture PasserCommande(Facture c);
 
 
 }

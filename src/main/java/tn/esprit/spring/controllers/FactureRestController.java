@@ -86,6 +86,14 @@ public class FactureRestController {
 	public Facture modifyFacture(@RequestBody Facture facture) {
 	return factureService.updateFacture(facture);
 	}
+	
+	//http://localhost:8089/SpringMVC/facture/modify-facture
+	@ApiOperation(value = "passer une commande")
+	@PutMapping("/passer-une-commande")
+	@ResponseBody
+	public Facture PasserCommande(@RequestBody Facture facture) {
+	return factureService.PasserCommande(facture);
+	}
 
 	
 	
