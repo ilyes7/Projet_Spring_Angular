@@ -20,6 +20,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -30,15 +33,12 @@ import tn.esprit.spring.enumerate.Profession;
 
 @Getter
 @Setter
-@EqualsAndHashCode
-@ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="Facture")
 public class Facture implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,14 +54,16 @@ public class Facture implements Serializable {
 	@Column(name="active")
 	private boolean active ;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="facture")
+	@JsonIgnore
 	private List<DetailFacture> detailFactures;
+	
 	@ManyToOne
 	Client client ;
 	@ManyToOne
 	Coupon coupon ;
 	
 	
-	public Facture(Long idFacture, float montantRemise, float montantFacture, LocalDateTime dateFacture, boolean active) {
+	/*public Facture(Long idFacture, float montantRemise, float montantFacture, LocalDateTime dateFacture, boolean active) {
 		super();
 		this.idFacture = idFacture;
 		this.montantRemise = montantRemise;
@@ -75,7 +77,7 @@ public class Facture implements Serializable {
 		this.montantFacture = montantFacture;
 		this.dateFacture = dateFacture;
 		this.active = active;
-	}
+	}*/
 	/*public Facture() {
 		super();
 	}

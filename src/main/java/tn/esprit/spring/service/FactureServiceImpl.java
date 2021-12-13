@@ -26,11 +26,11 @@ public class FactureServiceImpl implements IFactureService {
 	@Override
 	public List<Facture> retrieveAllFacture() {
 		List<Facture> factures =(List<Facture>)factureRepository.findAll();
-		for( Facture facture : factures)
+		for( Facture dfacture : factures)
 		{
-			log.info("facture:"+ facture);
+			log.info("facture:"+ dfacture);
 		}
-		return factures ;
+		return factures;
 	}
 
 	@Override

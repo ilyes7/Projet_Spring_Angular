@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -24,15 +26,11 @@ import tn.esprit.spring.enumerate.CategorieClient;
 import tn.esprit.spring.enumerate.Profession;
 @Getter
 @Setter
-@EqualsAndHashCode
-@ToString
 @RequiredArgsConstructor
 @Entity
 @Table(name="DetailFacture")
 public class DetailFacture implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,6 +46,7 @@ public class DetailFacture implements Serializable {
 	private float montantRemise;
 	@ManyToOne
 	Produit produit ;
+	@JsonIgnore
 	@ManyToOne
 	Facture facture ;
 	

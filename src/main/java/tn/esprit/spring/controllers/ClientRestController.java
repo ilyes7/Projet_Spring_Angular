@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.repository.ClientRepository;
 import tn.esprit.spring.service.IClientService;
 
 @RestController
@@ -20,6 +23,9 @@ public class ClientRestController {
 
 @Autowired
 IClientService clientService;
+@Autowired
+ClientRepository clientRepo;
+
 
 // http://localhost:8089/SpringMVC/client/retrieve-all-clients
 @GetMapping("/retrieve-all-clients")

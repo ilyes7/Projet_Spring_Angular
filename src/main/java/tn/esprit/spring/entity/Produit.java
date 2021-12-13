@@ -80,8 +80,8 @@ public class Produit implements Serializable{
 	@ManyToOne
 	@ToString.Exclude Rayon rayon ;
 	@JsonIgnore
-	@ManyToOne
-	@ToString.Exclude DetailFacture detailFacture ;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
+	@ToString.Exclude private Set<DetailFacture> detailFacture;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
 	@ToString.Exclude private Set<Feedback> listFeedback;

@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,10 +41,13 @@ public class Coupon implements Serializable {
 	@Column(name="pourcentage")
 	private float pourcentage;
 	@Column(name="libelle")
-	private float libelle;
+	private String libelle;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="coupon")
+	@JsonIgnore
 	private List<Facture> factures;
 	
+
 	
 
 }

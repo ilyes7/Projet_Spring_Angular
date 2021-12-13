@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.ClientRepository;
@@ -34,19 +36,21 @@ public class FactureRestController {
 	
 	@Autowired
 	FactureRepository factureRepository;
-	@Autowired
-	ClientRepository clientRepository;
-	
+
 	// http://localhost:8089/SpringMVC/facture/retrieve-all-factures
 	@ApiOperation(value = "Récupérer la liste des factures")
 	@GetMapping("/retrieve-all-factures")
-	@ResponseBody
 		public List<Facture> getFactures() {
 			List<Facture> listFactures = factureService.retrieveAllFacture();
 			return listFactures;
 		}
 	//http://localhost:8089/SpringMVC/facture/retrieve-facture/14
 	@ApiOperation(value = "Récupérer une facture")
+	/* @ApiResponses(value = {
+		        @ApiResponse(code = 200, message = "successful operation"),
+		        @ApiResponse(code = 400, message = "Invalid ID supplied"),
+		        @ApiResponse(code = 404, message = "Contact not found"),
+		        @ApiResponse(code = 405, message = "Validation exception")})*/
 	@GetMapping("/retrieve-facture/{facture-id}")
 	@ResponseBody
 	public Facture retrieveFacture(@PathVariable("facture-id") Long factureId) {
@@ -82,6 +86,9 @@ public class FactureRestController {
 	public Facture modifyFacture(@RequestBody Facture facture) {
 	return factureService.updateFacture(facture);
 	}
+
+	
+	
 	
 	
 	

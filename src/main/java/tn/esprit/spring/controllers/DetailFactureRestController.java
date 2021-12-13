@@ -71,6 +71,7 @@ public class DetailFactureRestController {
 	@ResponseBody
 	public DetailFacture modifyDetailFacture(@RequestBody DetailFacture detailFacture) {
 	return detailFactureService.updateDetailFacture(detailFacture);
+	
 	}
 
 }
