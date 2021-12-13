@@ -2,6 +2,7 @@ package tn.esprit.spring.service;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,4 +49,24 @@ public class CouponServiceImpl implements ICouponService{
 		return couponRepo.findById(id).orElse(null);
 	}
 
+	@Override
+	public void generateCoupon() {
+	    int leftLimit = 97; // letter 'a'
+	    int rightLimit = 122; // letter 'z'
+	    int targetStringLength = 5;
+	    Random random = new Random();
+	    Random randomNumber = new Random();
+
+	    String generatedString = random.ints(leftLimit, rightLimit + 1)
+	      .limit(targetStringLength)
+	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+	      .toString();
+	    
+	    String generatedNumber = randomNumber.ints(48, 58)
+	  	      .limit(2)
+	  	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+	  	      .toString();
+
+	    System.out.println(generatedString+generatedNumber);
+	}
 }

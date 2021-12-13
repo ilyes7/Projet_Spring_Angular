@@ -16,5 +16,7 @@ public interface ICouponService {
 	Coupon updateCoupon(Coupon c);
 
 	Coupon retrieveCoupon(Long id);
+	
+	public void generateCoupon();
 
 }

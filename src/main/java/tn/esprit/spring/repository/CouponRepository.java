@@ -6,4 +6,5 @@ import tn.esprit.spring.entity.Coupon;
 
 public interface CouponRepository extends CrudRepository<Coupon,Long>{
 
+
 }

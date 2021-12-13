@@ -69,5 +69,12 @@ public class CouponRestController {
 		public Coupon modifyCoupon(@RequestBody Coupon coupon) {
 		return couponService.updateCoupon(coupon);
 		}
+		//http://localhost:8089/SpringMVC/coupon/generate-coupon
+		@ApiOperation(value = "generer un coupon")
+		@GetMapping("/generate-coupon")
+		@ResponseBody
+		public void generateCoupon() {
+		 couponService.generateCoupon();
+		}
 
 }
