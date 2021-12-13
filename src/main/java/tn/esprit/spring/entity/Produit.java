@@ -1,6 +1,5 @@
 package tn.esprit.spring.entity;
 
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -41,7 +40,7 @@ import tn.esprit.spring.enumerate.CategorieProduit;
 @AllArgsConstructor
 @ToString
 @ApiModel(description = "Produit")
-public class Produit implements Serializable{
+public class Produit implements Serializable {
 	/**
 	 * 
 	 */
@@ -49,45 +48,50 @@ public class Produit implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idProduit")
-	@ApiModelProperty(value="idProduit")
-	private Long idProduit ; 
+	@ApiModelProperty(value = "idProduit")
+	private Long idProduit;
 	@Column(name = "code")
-	@ApiModelProperty(value="code")
+	@ApiModelProperty(value = "code")
 	private String code;
 	@Column(name = "libelle")
-	@ApiModelProperty(value="libelle")
+	@ApiModelProperty(value = "libelle")
 	private String libelle;
 	@Column(name = "prixUnitaire")
-	@ApiModelProperty(value="prixUnitaire")
+	@ApiModelProperty(value = "prixUnitaire")
 	private float prixUnitaire;
 	@Enumerated(EnumType.STRING)
-	@ApiModelProperty(value="categorieProduit")
+	@ApiModelProperty(value = "categorieProduit")
 	private CategorieProduit categorieProduit;
 	@Column(name = "dateCreation")
 	@Temporal(TemporalType.DATE)
-	@ApiModelProperty(value="dateCreation")
+	@ApiModelProperty(value = "dateCreation")
 	private Date dateCreation;
-	
-	
-	
+	private String picture;
+
 	@JsonIgnore
 	@ManyToOne
-	@ToString.Exclude Stock stock ;
+	@ToString.Exclude
+	Stock stock;
 	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
-	@ToString.Exclude private List<Fournisseur> fournissuers;
+	@ToString.Exclude
+	private List<Fournisseur> fournissuers;
 	@JsonIgnore
 	@ManyToOne
-	@ToString.Exclude Rayon rayon ;
+	@ToString.Exclude
+	Rayon rayon;
 	@JsonIgnore
-	@ManyToOne
-	@ToString.Exclude DetailFacture detailFacture ;
-	@JsonIgnore
+	@ToString.Exclude
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="produit")
-	@ToString.Exclude private Set<Feedback> listFeedback;
-	
-	
-	
+	private Set<DetailFacture> detailfactures;
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "produit")
+	@ToString.Exclude
+	private Set<Feedback> listFeedback;
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "produit")
+	private List<Favoris> favoris;
+
 	public Produit(String code, String libelle, float prixUnitaire, CategorieProduit categorieProduit) {
 		super();
 		this.code = code;
@@ -96,16 +100,10 @@ public class Produit implements Serializable{
 		this.categorieProduit = categorieProduit;
 	}
 
-
-	
-	
-	
 	public Produit(Long idProduit) {
 		super();
 		this.idProduit = idProduit;
 	}
-
-  
 
 	public Produit(String code, String libelle, float prixUnitaire, CategorieProduit categorieProduit,
 			Date dateCreation) {
@@ -117,10 +115,6 @@ public class Produit implements Serializable{
 		this.dateCreation = dateCreation;
 	}
 
-
-
-
-
 	public Produit(Long idProduit, String code, String libelle, float prixUnitaire, CategorieProduit categorieProduit) {
 		super();
 		this.idProduit = idProduit;
@@ -129,7 +123,5 @@ public class Produit implements Serializable{
 		this.prixUnitaire = prixUnitaire;
 		this.categorieProduit = categorieProduit;
 	}
-	
-	
-	
+
 }

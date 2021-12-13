@@ -26,6 +26,10 @@ public interface FeedbackRepository extends CrudRepository<Feedback, Long>{
 	@Query("SELECT COUNT(f) FROM Feedback f WHERE f.produit.idProduit = :idProduit AND f.reaction='Dislike' ")
 	long nbrDislikes(@Param("idProduit") long idProduit);
 	
+	@Query(value="SELECT *  FROM Feedback f WHERE f.produit_id_produit = :idProduit AND commentaire IS NOT NULL",
+			nativeQuery = true)
+	List<Feedback> getAllComments(@Param("idProduit") long idProduit);
+	
 	
 	@Transactional
 	@Modifying

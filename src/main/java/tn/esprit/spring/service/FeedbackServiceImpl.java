@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 import nonapi.io.github.classgraph.scanspec.WhiteBlackList.WhiteBlackListLeafname;
+import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Feedback;
+import tn.esprit.spring.entity.Produit;
 import tn.esprit.spring.repository.FeedbackRepository;
 
 @Service	
@@ -41,7 +43,7 @@ public class FeedbackServiceImpl implements FeedbackService{
 		List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findAllByIdProduit(idProduit);
 		for(Feedback feedback : feedbacks) {
 
-			log.info("feedback: "+ feedback);
+			//log.info("feedback: "+ feedback);
 		}
 		return feedbacks;
 	}
@@ -98,8 +100,11 @@ public class FeedbackServiceImpl implements FeedbackService{
 	}
 
 	@Override
-	public Feedback addReaction(Feedback f) {
-
+	public Feedback addReaction(@Valid @RequestBody Feedback f, long idProduit, long idUser) {
+		
+		f.setProduit(new Produit(idProduit));
+		f.setClient(new Client(idUser));
+		
 		return feedbackRepository.save(f);
 
 	}
@@ -107,6 +112,19 @@ public class FeedbackServiceImpl implements FeedbackService{
 	@Override
 	public void banAccount() {
 		feedbackRepository.banAccount();
+	}
+	
+	@Override
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Feedback addComment(@Valid @RequestBody Feedback c, long idProduit, long idUser) {
+		c.setProduit(new Produit(idProduit));
+		c.setClient(new Client(idUser));
+		return feedbackRepository.save(c);
+	}
+
+	@Override
+	public List<Feedback> getAllComments(long idProduit) {
+		return feedbackRepository.getAllComments(idProduit);
 	}
 
 

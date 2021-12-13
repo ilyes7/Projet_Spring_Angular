@@ -82,4 +82,9 @@ public class ProduitServiceImpl implements ProduitService {
 		return produitRepository.mostLiked();
 	}
 
+	@Override
+	public long nombreProducts() {
+		return produitRepository.count();
+	}
+
 }

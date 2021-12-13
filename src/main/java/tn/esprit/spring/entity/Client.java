@@ -56,9 +56,9 @@ public class Client implements Serializable {
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private List<Facture> factures;
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
-	private Set<Favoris> listFav;
+	private Set<Favoris> favoris;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Feedback> feedbacks;

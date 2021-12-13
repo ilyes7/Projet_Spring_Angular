@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,8 +22,10 @@ public interface FeedbackService {
 	long nbrLikes(long idProduit);
 	long nbrDislikes(long idProduit);
 	public Feedback updateReaction(Long idFeedback,  Feedback f);
-	public Feedback addReaction(Feedback f);
+	Feedback addReaction(Feedback f, long idProduit, long idUser);
 	public void banAccount();
+	List<Feedback> getAllComments( long idProduit);
+	public Feedback addComment(Feedback c, long idProduit, long idUser);
 	
 
 }

@@ -23,5 +23,7 @@ public interface ProduitService {
 	List bestSeller();
 	
 	List mostLiked();
+	
+	long nombreProducts();
 
 }
