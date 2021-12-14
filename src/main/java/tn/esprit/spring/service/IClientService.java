@@ -16,5 +16,6 @@ public interface IClientService {
 	Client updateClient(Client c);
 
 	  Client retrieveClient(Long id);
+	  List<Facture> retrieveClientsFactures(Long id);
 	  
 }

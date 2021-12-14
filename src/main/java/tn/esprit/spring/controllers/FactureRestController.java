@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,7 @@ import tn.esprit.spring.repository.ClientRepository;
 import tn.esprit.spring.repository.FactureRepository;
 import tn.esprit.spring.service.IClientService;
 import tn.esprit.spring.service.IFactureService;
-
+@CrossOrigin
 @RestController
 @Api(tags = "Facture management")
 @RequestMapping("/facture")

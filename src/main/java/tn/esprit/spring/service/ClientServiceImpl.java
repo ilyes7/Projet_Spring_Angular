@@ -77,6 +77,16 @@ public class ClientServiceImpl implements IClientService {
 	public Client retrieveClient(Long id) {
 		return clientRepository.findById(id).orElse(null);
 	}
+	@Override
+	public List<Facture> retrieveClientsFactures(Long id) {
+		Client c= clientRepository.findById(id).orElse(null);
+		List<Facture> factures =(List<Facture>)c.getFactures();
+		for( Facture dfacture : factures)
+		{
+			System.out.println(dfacture.getIdFacture());
+		}
+		return factures;
+	}
 
 	
 	

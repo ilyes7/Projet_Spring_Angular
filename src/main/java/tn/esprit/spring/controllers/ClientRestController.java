@@ -39,7 +39,22 @@ ClientRepository clientRepo;
 @GetMapping("/retrieve-client/{client-id}")
 @ResponseBody
 public Client retrieveClient(@PathVariable("client-id") Long clientId) {
-return clientService.retrieveClient(clientId);
+	Client c=clientService.retrieveClient(clientId);
+	List<Facture> factures =(List<Facture>)c.getFactures();
+	for( Facture dfacture : factures)
+	{
+		System.out.println(dfacture.getIdFacture());
+	}
+		return c;
+}
+
+
+
+//http://localhost:8089/SpringMVC/client/retrieve-client/14
+@GetMapping("/retrieve-client-factures/{client-id}")
+@ResponseBody
+public List<Facture> retrieveClientFactures(@PathVariable("client-id") Long clientId) {
+	return clientService.retrieveClientsFactures(clientId);
 }
 
 

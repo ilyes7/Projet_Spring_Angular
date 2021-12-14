@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.entity.Produit;
 import tn.esprit.spring.repository.DetailFactureRepository;
 import tn.esprit.spring.repository.FactureRepository;
 
@@ -39,9 +40,10 @@ public class DetailFactureServiceImpl implements IDetailFactureService {
 	}
 
 	@Override
-	public DetailFacture addDetailFacture(DetailFacture df, Facture fact) throws ParseException {
+	public DetailFacture addDetailFacture(DetailFacture df, Facture fact, Produit prod) throws ParseException {
 	
 		df.setFacture(fact);
+		df.setProduit(prod);
 		df=DFactureRepository.save(df);
 		
 		return df;
@@ -62,6 +64,13 @@ public class DetailFactureServiceImpl implements IDetailFactureService {
 	@Override
 	public Optional<DetailFacture> retrieveDetailFacture(Long id) {
 		return DFactureRepository.findById(id);
+	}
+
+	@Override
+	public Produit getProduitDetailFacture(Long idDetailFacture) {
+		DetailFacture df= DFactureRepository.findById(idDetailFacture).orElse(null);
+		return df.getProduit();
+		
 	}
 
 }

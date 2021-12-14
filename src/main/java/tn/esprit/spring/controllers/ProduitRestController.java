@@ -10,6 +10,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +29,7 @@ import tn.esprit.spring.enumerate.CategorieProduit;
 import tn.esprit.spring.repository.ProduitRepository;
 import tn.esprit.spring.service.ProduitServiceImpl;
 
-
+@CrossOrigin
 @RestController
 @Api(tags = "Gestion des produits")
 @RequestMapping("/produit")

@@ -3,6 +3,7 @@ package tn.esprit.spring.controllers;
 import java.text.ParseException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,10 +18,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import tn.esprit.spring.entity.DetailFacture;
 import tn.esprit.spring.entity.Facture;
+import tn.esprit.spring.entity.Produit;
 import tn.esprit.spring.service.FactureServiceImpl;
 import tn.esprit.spring.service.IDetailFactureService;
 import tn.esprit.spring.service.IFactureService;
-
+import tn.esprit.spring.service.ProduitService;
+@CrossOrigin
 @RestController
 @Api(tags = "Detail Facture management")
 @RequestMapping("/detail-facture")
@@ -29,6 +32,8 @@ public class DetailFactureRestController {
 	IDetailFactureService detailFactureService;
 	@Autowired
 	IFactureService factser;
+	@Autowired
+	ProduitService prodSer;
 	
 	// http://localhost:8089/SpringMVC/detail-facture/retrieve-all-factures
 	@ApiOperation(value = "Récupérer la liste des details factures")
@@ -48,12 +53,13 @@ public class DetailFactureRestController {
 	}
 	//http://localhost:8089/SpringMVC/detail-facture/add-facture
 	@ApiOperation(value = "Ajouter une detail facture")
-	@PostMapping("/add-facture/{facture-id}")
+	@PostMapping("/add-facture/{facture-id}/{produit-id}")
 	@ResponseBody
-	public DetailFacture addDetailFacture(@RequestBody DetailFacture c,@PathVariable("facture-id") Long factureId) throws ParseException
+	public DetailFacture addDetailFacture(@RequestBody DetailFacture c,@PathVariable("facture-id") Long factureId ,@PathVariable("produit-id") Long productId) throws ParseException
 	{
 		Facture f=factser.retrieveFacture(factureId).orElse(null);
-		DetailFacture detailFacture = detailFactureService.addDetailFacture(c,f);
+		Produit p=prodSer.retrieveProduit(productId);
+		DetailFacture detailFacture = detailFactureService.addDetailFacture(c,f,p);
 		return detailFacture;
 	}
 
@@ -72,6 +78,15 @@ public class DetailFactureRestController {
 	public DetailFacture modifyDetailFacture(@RequestBody DetailFacture detailFacture) {
 	return detailFactureService.updateDetailFacture(detailFacture);
 	
+	}
+	
+	
+	//http://localhost:8089/SpringMVC/detail-facture/retrieve-facture/14
+	@ApiOperation(value = "Récupérer une detail facture")
+	@GetMapping("/retrieve-produit-detail-facture/{facture-id}")
+	@ResponseBody
+	public Produit retrieveDetailFactureProduit(@PathVariable("facture-id") Long factureId) {
+	return detailFactureService.getProduitDetailFacture(factureId);
 	}
 
 }
